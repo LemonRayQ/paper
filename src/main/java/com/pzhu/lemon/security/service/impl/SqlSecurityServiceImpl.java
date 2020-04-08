@@ -2,6 +2,7 @@ package com.pzhu.lemon.security.service.impl;
 
 import com.pzhu.lemon.security.dal.SqlSecurityDAO;
 import com.pzhu.lemon.security.model.UserModel;
+import com.pzhu.lemon.security.model.UserParam;
 import com.pzhu.lemon.security.service.SqlSecurityService;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,18 @@ public class SqlSecurityServiceImpl implements SqlSecurityService {
         return sqlSecurityDao.insert(userModel);
 
     }
+
+    @Override
+    public UserModel select(UserParam userParam) {
+
+        return sqlSecurityDao.selectByName(userParam.getUserName(),userParam.getPassword());
+    }
+
+    @Override
+    public UserModel selectByName(UserParam userParam) {
+        return sqlSecurityDao.selectByName(userParam.getUserName(),userParam.getPassword());
+    }
+
 
     @Override
     public int insert(String request) {

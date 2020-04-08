@@ -5,11 +5,7 @@
 
 <configuration>
     <settings>
-        <setting name="cacheEnable" value="false"/>
-        <setting name="aggressiveLazyLoading" value="false"/>
-        <setting name="useGeneratedKeys" value="false"/>
-        <setting name="autoMappingBehavior" value="PARTIAL"/>
-        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="defaultExecutorType" value="SIMPLE"/>
         <setting name="jdbcTypeForNull" value="NULL"/>
         <setting name="logImpl" value="SLF4J"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>

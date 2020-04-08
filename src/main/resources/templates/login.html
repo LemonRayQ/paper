@@ -18,43 +18,47 @@
     <div class="login-content">
         <!-- logo或者字体样式 -->
         <div class="logo">
-            <h1>攀医挂号系统</h1>
+            <h1>安全测试</h1>
         </div>
         <!-- 登录界面的样式 -->
         <div class="login-form">
-            <form action="#" method="POST" role="form" th:action="@{/Dlogin}" th:id="loginData">
+            <form action="#" method="GET" role="form" th:action="@{/mysql/Dlogin}" th:id="loginData">
                 <div class="account">
-                    <label for="username" th:text="手机号"></label>
-                    <input type="text" class="form-control" id="username" th:name="id" placeholder="请输入账号">
+                    <label for="userName" th:text="用户名"></label>
+                    <input type="text" class="form-control" id="userName" th:name="userName" placeholder="请输入账号">
                 </div>
                 <div class="pas">
                     <label for="password">密码</label>
                     <input type="password" class="form-control" id="password" th:name="password" placeholder="请输入密码">
                 </div>
-                <div class="pas">
-                    <label class="radio-inline">
-                        <input type="radio" name="identity" id="inlineRadio1" value="0" checked="checked"> 病人
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="identity" id="inlineRadio2" value="1"> 医生
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="identity" id="inlineRadio3" value="2"> 管理员
-                    </label>
-                </div>
-                <input type="submit" class="form-control btn btn-success " id="exampleInputAmount1" value="登录"/>
-                <button type="button" style="margin-top:10px" class="form-control btn btn-primary" id="btn" th:text="注册"
-                        onclick="register2()"/>
-
+                <input type="submit" class="form-control btn btn-success " id="exampleInputAmount1" value="登录" />
+                <button type="button" style="margin-top:10px" class="form-control btn btn-primary" id="btn" th:text="登录1"
+                        onclick="mysql()"/>
             </form>
 
         </div>
     </div>
 
+
+
+    <div class="login-form">
+        <form action="#" method="GET" role="form" th:id="text1">
+
+            <div class="pas">
+                <label for="xss">文本</label>
+                <input type="text" class="form-control" id="xss" th:name="xss" placeholder="请输入文本">
+            </div>
+            <button type="button" style="margin-top:10px" class="form-control btn btn-primary" id="btn1" th:text="xss"
+                    onclick="xss()"/>
+        </form>
+
+    </div>
+
+
 </div>
 </body>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-<script src="./js/register/register.js"></script>
+<script src="static/js/login/login.js"></script>
 
 </html>

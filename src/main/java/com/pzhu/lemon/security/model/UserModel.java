@@ -11,9 +11,7 @@ import java.io.Serializable;
  * @create: 2020-03-18 20:31
  **/
 @Data
-public class UserModel implements Serializable {
-
-    private static final long serialVersionUID = 6966472684794218361L;
+public class UserModel{
 
     private int id;
 

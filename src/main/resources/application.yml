@@ -25,6 +25,8 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.pzhu.lemon.security.model
   configuration.map-underscore-to-camel-case: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
 

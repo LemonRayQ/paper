@@ -16,6 +16,8 @@ public interface SqlSecurityDAO {
 
     UserModel select(@Param("userName") String userName,@Param("password") String password);
 
+    UserModel selectByName(@Param("userName") String userName,@Param("password") String password);
+
     int insertByname(@Param("userName") String userName);
 
 }

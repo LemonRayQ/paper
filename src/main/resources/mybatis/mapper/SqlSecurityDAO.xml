@@ -33,11 +33,26 @@
         now()
     </sql>
 
-    <select id="select" resultMap="BaseResultMap">
+    <select id="select" resultMap="BaseResultMap" parameterType="String">
         select
         <include refid="allColumn"/>
         from
         <include refid="table"/>
+        <where>
+            user_name=${userName} and password=${password}
+        </where>
+
+    </select>
+
+    <select id="selectByName" resultMap="BaseResultMap" parameterType="String">
+        select
+        <include refid="allColumn"/>
+        from
+        <include refid="table"/>
+        <where>
+            user_name=#{userName} and password=#{password}
+        </where>
+
     </select>
     <insert id="insert" parameterType="com.pzhu.lemon.security.model.UserModel">
         insert into
