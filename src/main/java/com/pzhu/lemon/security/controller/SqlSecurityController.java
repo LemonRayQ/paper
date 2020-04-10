@@ -5,6 +5,7 @@ import com.pzhu.lemon.security.handler.input.SqlHandler;
 import com.pzhu.lemon.security.handler.input.SqlValidateHandler;
 import com.pzhu.lemon.security.model.UserModel;
 import com.pzhu.lemon.security.model.UserParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/mysql/")
+@Slf4j
 public class SqlSecurityController {
 
     @Resource
@@ -52,7 +54,6 @@ public class SqlSecurityController {
         }
         return Boolean.TRUE;
     }
-
 
 
 }

@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <!-- 引入bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/login.css" />
     <!-- 自定义样式 -->
-    <link rel="stylesheet" href="./css/login.css">
-</head>
+    <link rel="stylesheet" href="../css/login.css" />
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/login/login.js"></script>
+  </head>
+  <!--XSS攻击-->
+  <!--<script>window.location.href="http://www.baidu.com";</script>-->
+  <body>
+    <div class="container-fluid">
+      <div class="header">
+        安全测试
+      </div>
+      <div class="body">
+        <div class="login-content">
+          <!-- logo或者字体样式 -->
 
-<body>
-<div class="container-fluid">
-    <div class="login-content">
-        <!-- logo或者字体样式 -->
-        <div class="logo">
-            <h1>安全测试</h1>
-        </div>
-        <!-- 登录界面的样式 -->
-        <div class="login-form">
+          <!-- 登录界面的样式 -->
+          <div class="login-form">
             <form action="#" method="GET" role="form" th:action="@{/mysql/Dlogin}" th:id="loginData">
-                <div class="account">
-                    <label for="userName" th:text="用户名"></label>
-                    <input type="text" class="form-control" id="userName" th:name="userName" placeholder="请输入账号">
-                </div>
-                <div class="pas">
-                    <label for="password">密码</label>
-                    <input type="password" class="form-control" id="password" th:name="password" placeholder="请输入密码">
-                </div>
-                <input type="submit" class="form-control btn btn-success " id="exampleInputAmount1" value="登录" />
-                <button type="button" style="margin-top:10px" class="form-control btn btn-primary" id="btn" th:text="登录1"
-                        onclick="mysql()"/>
+              <div class="account">
+                <label for="userName" th:text="用户名">用户名</label>
+                <input type="text" class="form-control" id="userName" th:name="userName" placeholder="请输入账号"/>
+              </div>
+              <div class="pas">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" id="password" th:name="password" placeholder="请输入密码"/>
+              </div>
+              <div class="left-code">
+                <input type="text" class="form-control" name="imageCode" th:id="imageMask" placeholder="请输入验证码"/>
+                <img src="/createImageCode" alt="验证码图" onclick="changeCode()" />
+              </div>
+              <input type="submit" class="form-control btn btn-danger" id="exampleInputAmount1" value="登录"/>
+              <button type="button" style="margin-top: 10px;" class="form-control btn btn-success" id="btn" th:text="登录1" onclick="mysql()"/>
+              <button type="button" style="margin-top: 10px;" class="form-control btn btn-primary" id="btn2" th:text="注册" onclick="mysql()"/>
             </form>
-
+          </div>
         </div>
-    </div>
-
-
-
-    <div class="login-form">
-        <form action="#" method="GET" role="form" th:id="text1">
-
+        <div class="login-form">
+          <form action="#" method="GET" role="form" th:id="text1">
             <div class="pas">
-                <label for="xss">文本</label>
-                <input type="text" class="form-control" id="xss" th:name="xss" placeholder="请输入文本">
+              <label for="xss">文本</label>
+              <input type="text" class="form-control" id="xss" th:name="xss" placeholder="请输入文本"/>
             </div>
-            <button type="button" style="margin-top:10px" class="form-control btn btn-primary" id="btn1" th:text="xss"
-                    onclick="xss()"/>
-        </form>
-
+            <button type="button" style="margin-top: 10px;" class="form-control btn btn-primary" id="btn1" th:text="xss" onclick="Sxss()"/>
+          </form>
+        </div>
+      </div>
     </div>
-
-
-</div>
-</body>
-<script src="./js/jquery-3.3.1.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="static/js/login/login.js"></script>
-
+  </body>
 </html>

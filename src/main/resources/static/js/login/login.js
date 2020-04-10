@@ -10,11 +10,15 @@ function mysql() {
             switch (data) {
                 case true:
                     alert("登录成功！")
+                    window.location.reload()
                     break;
                 case false:
                     alert("登录失败！")
+                    window.location.reload()
                     break;
                 default:
+                    window.location.reload()
+
                     break;
             }
         }
@@ -22,18 +26,15 @@ function mysql() {
 }
 
 
-function xss() {
-    alert("111")
+function Sxss() {
     var data = $("#text1").serialize();
 
     $.ajax({
-        url: "/xss",
+        url: "/security/xss",
         type: "post",
         data: data,
         success: function (data) {
-            if (data!=null){
-                alert("111")
-            }
+            data
         }
     });
 }
